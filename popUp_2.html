@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PopUp</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<style>
+		body {
+			font-family: "Arial";
+			padding: 0;
+			margin: 0;
+		}
+
+		h1 {
+			margin: 20px;
+		}
+
+		.button-popup {
+			margin: 20px;
+			background: #202020;
+			padding: 15px;
+		}
+
+		.button-popup a {
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		.window-popup {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 10;
+			background: rgba(0, 0, 0, 0.7);
+			top: 0;
+			left: 0;
+			display: none;
+		}
+
+		.popup-content {
+			width: 500px;
+			height: 300px;
+			background: white;
+			border-radius: 3px;
+			position: absolute;
+			left: 30%;
+			top: 25%;
+		}
+
+		.popup-content a {
+			padding: 10px;
+			background: #3498db;
+			color: white;
+			text-decoration: none;
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>PopUp</h1>
+
+	<span class="button-popup">
+		<a href="#" class="button-open">Press On Button</a>
+	</span>
+
+	<div class="window-popup">
+		<div class="popup-content">
+			<h1>Content goes here</h1>
+			<a href="" class="button-close">Close</a>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$(".button-open").click(function() {
+				$(".window-popup").show("slow");
+			});
+
+			$(".button-close").click(function() {
+				$(".window-popup").hide("slow");
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PopUp</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.pop_background {
+			position: fixed;
+			width: 100%;
+			height: 900px;
+			top: 0;
+			left: 0;
+			background: #000;
+			opacity: .5;
+			z-index: 1000;
+			display: none;
+		}
+
+		.pop_box {
+			position: absolute;
+			background: #fff;
+			width: 30%;
+			margin: 100px 0 0 35%;
+			padding: 20px;
+			z-index: 1500;
+			display: none;
+		}
+
+		.close {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 1px solid #999;
+			text-align: center;
+			line-height: 30px;
+			font-size: 30px;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="pop_background"></div>
+	<div class="pop_box">
+		<span class="close">&times</span>
+	</div>
+	<a href="#" class="open">Open PopUp Window</a>
+	<h1>Hello popup window tutorial here!</h1>
+
+	<script>
+		$(document).ready(function () {
+			$(".open").click(function() {
+				$(".pop_background").fadeIn();
+				$(".pop_box").fadeIn();
+				return false;
+			});
+
+			$(".close").click(function() {
+				$(".pop_background").fadeOut();
+				$(".pop_box").fadeOut();
+				return false;
+			});
+		});
+	</script>
+</body>
+</html>
